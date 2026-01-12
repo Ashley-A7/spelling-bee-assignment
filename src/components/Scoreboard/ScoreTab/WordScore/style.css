@@ -1,0 +1,22 @@
+.word-points-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.word-points-table th,
+.word-points-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.word-points-table th {
+    font-weight: 600;
+    border-bottom: 2px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.word-points-table thead th:nth-child(2),
+.points {
+    text-align: right;
+}
