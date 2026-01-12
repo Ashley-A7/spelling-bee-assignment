@@ -5,6 +5,7 @@
     "private": true,
     "scripts": {
         "dev": "bun src/index.html",
+        "build": "bun build src/index.html --outdir=dist",
         "lint": "bun install && bun oxlint",
         "fmt": "bun install && bun dprint fmt",
         "typecheck": "bun tsc --noEmit",
