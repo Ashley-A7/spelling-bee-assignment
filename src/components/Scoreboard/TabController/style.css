@@ -1,0 +1,27 @@
+.tab-controller {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.tab-controller button {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #e4e7ea;
+    color: #333;
+    transition: background-color 0.2s ease;
+}
+
+.tab-controller button:hover {
+    background-color: #d6d9dd;
+}
+
+.tab-controller button.active {
+    background-color: #1c1c1c;
+    color: #f8f1e4;
+}

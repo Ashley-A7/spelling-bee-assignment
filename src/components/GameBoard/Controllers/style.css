@@ -1,0 +1,24 @@
+.controllers-component {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.display-errors {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    li {
+        padding: 8px 16px;
+        background-color: #fb1919;
+        color: #ffde00;
+        font-weight: 500;
+        letter-spacing: 1px;
+        border-radius: 6px;
+    }
+}

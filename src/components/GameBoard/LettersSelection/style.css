@@ -1,0 +1,90 @@
+.letters-selection {
+    .hive {
+        --size: 90px; /* hex width/height (via aspect-ratio) */
+        --gap: 0px; /* distance between hex edges */
+        /* Distance between hex centers (tuned for nice spacing) */
+        --r: calc(var(--size) * 0.95 + var(--gap));
+
+        position: relative;
+        width: calc(var(--size) * 4.2);
+        height: calc(var(--size) * 2.2);
+        margin: 24px auto;
+    }
+
+    /* base hex */
+    .hive button {
+        border: 0;
+        list-style: none;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: var(--size);
+        aspect-ratio: 1 / 1;
+        transform: translate(-50%, -50%) translate(var(--tx, 0), var(--ty, 0));
+        display: grid;
+        place-items: center;
+        font: 700 28px/1.1 system-ui, sans-serif;
+        color: #222;
+        cursor: pointer;
+        text-transform: uppercase;
+
+        /* hex shape */
+        clip-path: polygon(
+            25% 6.698%,
+            75% 6.698%,
+            100% 50%,
+            75% 93.302%,
+            25% 93.302%,
+            0% 50%
+        );
+        background: #e9ecef;
+        box-shadow: 0 2px 8px #00000014;
+    }
+
+    /* center (first li) */
+    .hive button:nth-child(1) {
+        background: #f6d33b; /* yellow */
+    }
+
+    /* Surrounding 6 positions (angles for a hex grid):
+       top, top-right, bottom-right, bottom, bottom-left, top-left
+       Using cos/sin(30°)=0.866 and 0.5 for offsets.
+    */
+    .hive button:nth-child(2) {
+        /* top */
+        --tx: 0px;
+        --ty: calc(-1 * var(--r));
+    }
+    .hive button:nth-child(3) {
+        /* top-right (30°) */
+        --tx: calc(0.866 * var(--r));
+        --ty: calc(-0.5 * var(--r));
+    }
+    .hive button:nth-child(4) {
+        /* bottom-right (330°) */
+        --tx: calc(0.866 * var(--r));
+        --ty: calc(0.5 * var(--r));
+    }
+    .hive button:nth-child(5) {
+        /* bottom */
+        --tx: 0px;
+        --ty: var(--r);
+    }
+    .hive button:nth-child(6) {
+        /* bottom-left (210°) */
+        --tx: calc(-0.866 * var(--r));
+        --ty: calc(0.5 * var(--r));
+    }
+    .hive button:nth-child(7) {
+        /* top-left (150°) */
+        --tx: calc(-0.866 * var(--r));
+        --ty: calc(-0.5 * var(--r));
+    }
+
+    /* Optional: scale nicely on small screens */
+    @media (max-width: 520px) {
+        .hive {
+            --size: 70px;
+        }
+    }
+}

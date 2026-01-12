@@ -1,0 +1,22 @@
+.game-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+
+    .game-panel {
+        width: 100%;
+        max-width: 1200px;
+        min-height: 600px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 24px;
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        align-items: stretch;
+        gap: 24px;
+    }
+}
